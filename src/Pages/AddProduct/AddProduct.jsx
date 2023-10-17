@@ -1,53 +1,50 @@
-
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
-   
-    const handleAddProduct = (event)=>{
-        event.preventDefault();
+  const handleAddProduct = (event) => {
+    event.preventDefault();
 
-        const form = event.target;
-    
-        const name = form.name.value;
-        const quantity = form.brand.value;
-        const supplier = form.type.value;
-        const taste = form.price.value;
-        const category = form.rating.value;
-        const details = form.details.value;
-        const photo = form.photo.value;
-    
-        const newCoffee = {
-          name,
-          quantity,
-          supplier,
-          taste,
-          category,
-          details,
-          photo,
-        };
-        console.log(newCoffee);
+    const form = event.target;
 
-        fetch("https://cool-beans-coffee-cafe-server-lsp4sgzxy-hridoys-projects.vercel.app/coffee", {
+    const name = form.name.value;
+    const quantity = form.brand.value;
+    const supplier = form.type.value;
+    const taste = form.price.value;
+    const category = form.rating.value;
+    const details = form.details.value;
+    const photo = form.photo.value;
+
+    const myProducts = {
+      name,
+      quantity,
+      supplier,
+      taste,
+      category,
+      details,
+      photo,
+    };
+    console.log(myProducts);
+
+    fetch("http://localhost:5000/product", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(newCoffee),
+      body: JSON.stringify(myProducts),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
         if (data.insertedId) {
-            Swal.fire({
-              title: "Success!",
-              text: "Coffee Added Successfully",
-              icon: "success",
-              confirmButtonText: "Cool",
-            });
-          }
+          Swal.fire({
+            title: "Success!",
+            text: "Coffee Added Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
       });
   };
-
 
   return (
     <div className="bg-[#F4F3F0]">
@@ -130,7 +127,9 @@ const AddProduct = () => {
             </div>
             <div className="form-control md:w-1/2 md:ml-4 mt-8 md:mt-0">
               <label className="label">
-                <span className="label-text font-semibold">Product Details</span>
+                <span className="label-text font-semibold">
+                  Product Details
+                </span>
               </label>
               <label className="input-group">
                 <input
@@ -146,7 +145,9 @@ const AddProduct = () => {
           <div className="mb-8">
             <div className="form-control w-full">
               <label className="label">
-                <span className="label-text font-semibold">Product Photo URL</span>
+                <span className="label-text font-semibold">
+                  Product Photo URL
+                </span>
               </label>
               <label className="input-group">
                 <input
