@@ -1,24 +1,22 @@
 import { Link, NavLink } from "react-router-dom";
 
-
 const links = (
-    <>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/Products"> Add Product</NavLink>
-      </li>
-      <li>
-        <NavLink to="/carts">My Cart</NavLink>
-      </li>
-      
-    </>)
+  <>
+    <li>
+      <NavLink to="/">Home</NavLink>
+    </li>
+    <li>
+      <NavLink to="/Products"> Add Product</NavLink>
+    </li>
+    <li>
+      <NavLink to="/carts">My Cart</NavLink>
+    </li>
+  </>
+);
 
 const Navbar = () => {
   const user = false;
 
-  
   return (
     <div>
       <div className="md:mb-6 lg:mb-5">
@@ -48,9 +46,16 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            <a className="">
-              <img className="w-12 md:w-16" src="https://i.ibb.co/D78HW2S/download-1.png" alt="" />
-            </a>
+            <div className="flex gap-1 items-center">
+              <a className="">
+                <img
+                  className="w-24"
+                  src="https://i.ibb.co/BwnyZXr/5203134.jpg"
+                  alt=""
+                />
+              </a>
+              {/* <h2 className="text-2xl font-bold">Hridayam </h2> */}
+            </div>
           </div>
           <div className="navbar-center hidden md:flex">
             <ul className="menu font-bold menu-horizontal px-1">{links}</ul>
@@ -60,7 +65,11 @@ const Navbar = () => {
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
-                    <img className="bg-slate-500" src={user.photoURL} alt={user.displayName} />
+                    <img
+                      className="bg-slate-500"
+                      src={user.photoURL}
+                      alt={user.displayName}
+                    />
                   </div>
                 </label>
                 <ul
@@ -74,7 +83,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <button
-                      onClick={'handleLogout'}
+                      onClick={"handleLogout"}
                       className="btn btn-sm  btn-ghost font-bold text-red-500"
                     >
                       Logout
@@ -84,7 +93,9 @@ const Navbar = () => {
               </div>
             ) : (
               <Link to="/login">
-                <button className="btn  p-2 bg-gray-300 text-center font-bold text-green-800">Login</button>
+                <button className="btn  p-2 bg-gray-300 text-center font-bold text-green-800">
+                  Login
+                </button>
               </Link>
             )}
           </div>
