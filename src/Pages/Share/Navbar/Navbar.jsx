@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuth from "./../../../Hook/useAuth";
 
 const links = (
   <>
@@ -15,7 +16,17 @@ const links = (
 );
 
 const Navbar = () => {
-  const user = false;
+  const { user, userSignOut } = useAuth();
+
+  const handleLogout = () => {
+    userSignOut()
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
 
   return (
     <div>
@@ -46,16 +57,13 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            <div className="flex gap-1 items-center">
-              <a className="">
-                <img
-                  className="w-24"
-                  src="https://i.ibb.co/BwnyZXr/5203134.jpg"
-                  alt=""
-                />
-              </a>
-              {/* <h2 className="text-2xl font-bold">Hridayam </h2> */}
-            </div>
+            <a className="">
+              <img
+                className="w-24"
+                src="https://i.ibb.co/BwnyZXr/5203134.jpg"
+                alt=""
+              />
+            </a>
           </div>
           <div className="navbar-center hidden md:flex">
             <ul className="menu font-bold menu-horizontal px-1">{links}</ul>
@@ -83,7 +91,7 @@ const Navbar = () => {
                   </li>
                   <li>
                     <button
-                      onClick={"handleLogout"}
+                      onClick={handleLogout}
                       className="btn btn-sm  btn-ghost font-bold text-red-500"
                     >
                       Logout

@@ -1,16 +1,16 @@
 import { ToastContainer, toast } from "react-toastify";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import useAuth from "../../Hook/useAuth";
 
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
+    const {createUser,userUpdateProfile } = useAuth();
+    const navigate = useNavigate();
 
-    
-  
-  
     const handleRegister = (e) => {
       e.preventDefault();
       const name = e.target.name.value;
@@ -36,6 +36,19 @@ const Register = () => {
             );
             return;
         }
+
+        createUser(email, password)
+        .then(() => {
+          userUpdateProfile(name, photo).then(() => {
+            toast.success("Registration successfully");
+            setTimeout(()=>{
+              navigate("/");
+            },2000)
+          });
+        })
+        .catch(() => {
+          toast.error("This Email is Already Used");
+        });
     };
     return (
         <div className="m-auto grid justify-center px-4 pt-20 lg:pt-0 items-center hero min-h-screen bg-base-200 ">
