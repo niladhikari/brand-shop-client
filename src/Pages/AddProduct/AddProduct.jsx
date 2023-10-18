@@ -7,19 +7,19 @@ const AddProduct = () => {
     const form = event.target;
 
     const name = form.name.value;
-    const quantity = form.brand.value;
-    const supplier = form.type.value;
-    const taste = form.price.value;
-    const category = form.rating.value;
+    const brandName = form.brand.value;
+    const type = form.type.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
     const details = form.details.value;
     const photo = form.photo.value;
 
     const myProducts = {
       name,
-      quantity,
-      supplier,
-      taste,
-      category,
+      brandName,
+      type,
+      price,
+      rating,
       details,
       photo,
     };
@@ -38,7 +38,7 @@ const AddProduct = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
-            text: "Coffee Added Successfully",
+            text: "Product Added Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });

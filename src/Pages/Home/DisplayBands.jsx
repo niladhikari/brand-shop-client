@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 const DisplayBands = ({brand}) => {
-  const {photo,name} = brand;
+  const {photo,brandName} = brand;
   return (
     <div>
       <div className="card  bg-base-100 shadow-xl">
@@ -12,7 +12,7 @@ const DisplayBands = ({brand}) => {
           />
         </figure>
         <div className="card-body items-center text-center">
-          <h2 className="card-title text-2xl font-bold">{name}</h2>
+          <h2 className="card-title text-2xl font-bold">{brandName}</h2>
         </div>
       </div>
     </div>

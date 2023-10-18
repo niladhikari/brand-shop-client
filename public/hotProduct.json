@@ -1,0 +1,34 @@
+[
+    {
+        "id":1,
+        "productName": "iPad (10th gen.)",
+        "image": "https://i.ibb.co/pxC20vK/ipad-digitalmat.png",
+        "price": "$300",
+        "price2": "$400",
+        "description": "The 10th generation iPad is an affordable Apple tablet with a 10.2-inch Retina display and support for the Apple Pencil. It's a versatile and budget-friendly option for various tasks and entertainment."
+    },
+    {
+        "id":2,
+        "productName": "Galaxy A54 5G",
+        "image": "https://i.ibb.co/BLRBFDB/A54-01-black-Configurator-DT-800x600.jpg",
+        "price": "$350",
+        "price2": "$420",
+        "description": "A refined design with fast performance.Samsung Galaxy A54 5G, complete with a high-resolution camera. View all your favorite shows, games in clear detail with the new fluid display."
+    },
+    {
+        "id":3,
+        "productName": "Google Pixel 5a",
+        "image": "https://i.ibb.co/py3FKKs/pixel-6a-01-500x500.jpg",
+        "price": "$250",
+        "price2": "$320",
+        "description": "The Google Pixel 5a is a mid-range smartphone known for its 6.34-inch OLED display and exceptional camera capabilities, running on a Qualcomm Snapdragon 765G processor."
+    },
+    {
+        "id":4,
+        "productName": "HUAWEI Band 6",
+        "image": "https://i.ibb.co/hx6xQdR/huawei-band-8.png",
+        "price": "$270",
+        "price2": "$350",
+        "description": "The HUAWEI Band 6 is a fitness tracker with a large AMOLED display and features such as heart rate monitoring, sleep tracking, and multiple workout modes. It provides users with fitness and health-related data."
+    }
+]

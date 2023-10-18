@@ -3,11 +3,11 @@ const Bands = () => {
     e.preventDefault();
 
     const form = e.target;
-    const name = form.name.value;
+    const brandName = form.name.value;
     const photo = form.photo.value;
     // console.log(name, photo);
     const myData = {
-      name,
+      brandName,
       photo,
     };
     console.log(myData);
