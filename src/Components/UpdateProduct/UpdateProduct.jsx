@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const AddProduct = () => {
+const UpdateProduct = () => {
   const [selectedBrand, setSelectedBrand] = useState("");
+  const updateData = useLoaderData();
+  const { _id, brandName, details, name, photo, price, rating, type } =
+    updateData;
+  console.log(updateData);
+
+  useEffect(() => {
+    setSelectedBrand(brandName);
+  }, []);
+
   const handleAddProduct = (event) => {
     event.preventDefault();
 
@@ -27,8 +37,8 @@ const AddProduct = () => {
     };
     console.log(myProducts);
 
-    fetch("http://localhost:5000/product", {
-      method: "POST",
+    fetch(`http://localhost:5000/product/${_id}`, {
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
@@ -37,22 +47,21 @@ const AddProduct = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
-            text: "Product Added Successfully",
+            text: "Coffee Updated Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
         }
       });
   };
-
   return (
     <div className="bg-[#F4F3F0]">
       <div className=" p-10 md:p-24 max-w-7xl mx-auto">
         <h2 className="text-3xl font-extrabold text-center mb-5">
-          Add a Product
+          Update a Product
         </h2>
         <form onSubmit={handleAddProduct}>
           <div className="md:flex mb-8">
@@ -64,6 +73,7 @@ const AddProduct = () => {
                 <input
                   type="text"
                   name="name"
+                  defaultValue={name}
                   placeholder="Product Name"
                   className="input input-bordered w-full"
                 />
@@ -77,6 +87,7 @@ const AddProduct = () => {
                 <select
                   className="select select-bordered w-full"
                   value={selectedBrand}
+                  defaultValue={brandName}
                   onChange={(e) => setSelectedBrand(e.target.value)}
                 >
                   <option disabled value="">
@@ -101,6 +112,7 @@ const AddProduct = () => {
               <label className="input-group">
                 <input
                   type="text"
+                  defaultValue={type}
                   name="type"
                   placeholder="Product Type"
                   className="input input-bordered w-full"
@@ -114,6 +126,7 @@ const AddProduct = () => {
               <label className="input-group">
                 <input
                   type="text"
+                  defaultValue={price}
                   name="price"
                   placeholder="Product Price"
                   className="input input-bordered w-full"
@@ -130,6 +143,7 @@ const AddProduct = () => {
               <label className="input-group">
                 <input
                   type="text"
+                  defaultValue={rating}
                   name="rating"
                   placeholder="Rating"
                   className="input input-bordered w-full"
@@ -146,6 +160,7 @@ const AddProduct = () => {
                 <input
                   type="text"
                   name="details"
+                  defaultValue={details}
                   placeholder="Product Details"
                   className="input input-bordered w-full"
                 />
@@ -164,6 +179,7 @@ const AddProduct = () => {
                 <input
                   type="text"
                   name="photo"
+                  defaultValue={photo}
                   placeholder="Photo URL"
                   className="input input-bordered w-full "
                 />
@@ -172,7 +188,7 @@ const AddProduct = () => {
           </div>
           <input
             type="submit"
-            value="Add Product"
+            value="Update Product"
             className="btn btn-block font-bold bg-blue-200"
           />
         </form>
@@ -181,4 +197,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default UpdateProduct;
