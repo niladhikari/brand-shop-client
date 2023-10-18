@@ -7,42 +7,47 @@ import Login from "../Pages/Login/Login";
 import Register from './../Pages/Register/Register';
 import PrivateRoute from "./PrivateRoute";
 import Bands from "../Pages/Home/Bands";
-
-
+import Error from './../Pages/Error/Error';
+import BrandDetails from "../Pages/Home/BrandDetails";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Root></Root>,
-      children:[
-        {   
-            path:'/',
-            element:<Home></Home>,
-            loader:()=> fetch(`http://localhost:5000/brand`)
-        },
-        {   
-            path:'/Products',
-            element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
-        },
-        {   
-            path:'/carts',
-            element:<PrivateRoute><MyCart></MyCart></PrivateRoute>,
-        },
-        {   
-            path:'/login',
-            element:<Login></Login>,
-        },
-        {   
-            path:'/register',
-            element:<Register></Register>,
-        },
-        {   
-            path:'/brands',
-            element:<Bands></Bands>,
-        },
-       
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <Root></Root>,
+    errorElement: <Error></Error>,
+    children: [
+      {   
+          path: '/',
+          element: <Home></Home>,
+          loader: () => fetch(`http://localhost:5000/brand`)
+      },
+      {   
+          path: '/details/:id',
+          element: <BrandDetails></BrandDetails>,
+          loader: ({ params }) => fetch(`http://localhost:5000/brand/${params.id}`)
+      },
+      {   
+          path: '/Products',
+          element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>,
+      },
+      {   
+          path: '/carts',
+          element: <PrivateRoute><MyCart></MyCart></PrivateRoute>,
+      },
+      {   
+          path: '/login',
+          element: <Login></Login>,
+      },
+      {   
+          path: '/register',
+          element: <Register></Register>,
+      },
+      {   
+          path: '/brands',
+          element: <Bands></Bands>,
+      },
+    ]
+  },
+]);
 
 export default router;

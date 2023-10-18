@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 
 const HotDealsCard = ({ product }) => {
-  console.log(product);
   const { productName, image, price, price2, description } = product;
   return (
     <div>

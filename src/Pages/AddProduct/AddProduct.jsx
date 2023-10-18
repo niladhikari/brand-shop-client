@@ -1,13 +1,15 @@
+import { useState } from "react";
 import Swal from "sweetalert2";
 
 const AddProduct = () => {
+  const [selectedBrand, setSelectedBrand] = useState("");
   const handleAddProduct = (event) => {
     event.preventDefault();
 
     const form = event.target;
 
     const name = form.name.value;
-    const brandName = form.brand.value;
+    const brandName = selectedBrand;
     const type = form.type.value;
     const price = form.price.value;
     const rating = form.rating.value;
@@ -72,14 +74,36 @@ const AddProduct = () => {
                 <span className="label-text font-semibold">Brand Name</span>
               </label>
               <label className="input-group">
-                <input
-                  type="text"
-                  name="brand"
-                  placeholder="Brand Name"
-                  className="input input-bordered w-full"
-                />
+                <select
+                  className="select select-bordered w-full"
+                  value={selectedBrand}
+                  onChange={(e) => setSelectedBrand(e.target.value)}
+                >
+                  <option disabled value="">
+                    Select Brand
+                  </option>
+                  <option value="Apple">Apple</option>
+                  <option value="Samsung">Samsung</option>
+                  <option value="Sony">Sony</option>
+                  <option value="Google">Google</option>
+                  <option value="HP">HP</option>
+                  <option value="Huawei">Huawei</option>
+                </select>
               </label>
             </div>
+
+            {/* <div className="form-control w-full max-w-xs">
+              <select className="select select-bordered">
+                <option disabled selected>
+                  Pick one
+                </option>
+                <option>Star Wars</option>
+                <option>Harry Potter</option>
+                <option>Lord of the Rings</option>
+                <option>Planet of the Apes</option>
+                <option>Star Trek</option>
+              </select>
+            </div> */}
           </div>
 
           <div className="md:flex mb-8">
