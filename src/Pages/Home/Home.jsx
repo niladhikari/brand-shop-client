@@ -27,7 +27,7 @@ const Home = () => {
       </div>
 
       <div className="max-w-7xl mx-auto mb-20">
-        <h2 className="text-center text-5xl font-bold text-green-800  mt-40">
+        <h2 className="dark:text-white text-center text-5xl font-bold text-green-800  mt-40">
           Hot Deals Products
         </h2>
         <p className="text-center mt-4 mb-10 text-green-800 font-semibold">Product discounts offer cost-saving opportunities, making quality items more affordable for budget-conscious shoppers</p>

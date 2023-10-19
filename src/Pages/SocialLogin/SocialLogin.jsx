@@ -4,22 +4,35 @@ import useAuth from "../../Hook/useAuth";
 import { useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
-    const {SignInGoogle} = useAuth();
-    const navigate = useNavigate()
+  const { SignInGoogle } = useAuth();
+  const navigate = useNavigate();
 
-    const handleSocialLogin = ()=>{
-      SignInGoogle()
-       .then(() => {
-         toast.success(" Successfully Login");
-         setTimeout(()=>{
+  const handleSocialLogin = () => {
+    SignInGoogle()
+      .then((res) => {
+        console.log(res.user.auth.email);
+        toast.success(" Successfully Login");
+        setTimeout(() => {
           navigate("/");
-         },2000)
-        
-       })
-       .catch((error) => {
-         toast.error(error);
-       });
-    }
+        }, 2000);
+        // const user = { email };
+        fetch("http://localhost:5000/user", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(res.user),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+      })
+
+      .catch((error) => {
+        toast.error(error);
+      });
+  };
   return (
     <div>
       <div className="p-4 space-y-3 mb-7 text-center grid w-96 m-auto">
