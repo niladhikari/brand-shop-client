@@ -10,6 +10,7 @@ import Bands from "../Pages/Home/Bands";
 import Error from './../Pages/Error/Error';
 import BrandDetails from "../Pages/Home/BrandDetails";
 import UpdateProduct from "../Components/UpdateProduct/UpdateProduct";
+import ProductDetails from "../Pages/ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
       {   
           path: '/update/:id',
           element: <UpdateProduct></UpdateProduct>,
+          loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+      },
+      {   
+          path: '/detailsData/:id',
+          element: <ProductDetails></ProductDetails>,
           loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
       },
     ]

@@ -18,7 +18,7 @@ const BrandDetailsCard = ({ product }) => {
           <p>Rating : {rating}</p>
           <div className="card-actions mt-2">
           {/* to={`/details/${_id}`} */}
-            <Link><button className="btn btn-primary">Details</button></Link>
+            <Link to={`/detailsData/${_id}`}><button className="btn btn-primary">Details</button></Link>
             <Link to={`/update/${_id}`}><button className="btn btn-primary">Update</button></Link>
           </div>
         </div>
