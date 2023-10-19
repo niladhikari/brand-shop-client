@@ -10,10 +10,10 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
-      <h2 className="text-center mt-20 text-5xl font-bold text-green-800">
+      <h2 className="text-center mt-20 text-5xl font-bold text-teal-500">
         Brands Category{" "}
       </h2>
-      <p className="text-center mt-4 text-green-800 font-semibold">The best brand is characterized by exceptional quality, trustworthiness, and a strong reputation for consistently delivering outstanding products or services.</p>
+      <p className="text-center mt-4 text-teal-500 font-semibold ">The best brand is characterized by exceptional quality, trustworthiness, and a strong reputation for consistently delivering outstanding products or services.</p>
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 mb-20">
         {brands.map((brand) => (
           <DisplayBands key={brand._id} brand={brand}></DisplayBands>
@@ -21,16 +21,16 @@ const Home = () => {
       </div>
 
       <div>
-        <h2 className="text-center text-5xl font-bold text-green-800 mt-40">Feature Product</h2>
-        <p className="text-center mt-4 text-green-800 font-semibold">The best products stand out with unrivaled quality, reliability, and user satisfaction, setting the benchmark for excellence</p>
+        <h2 className="text-center text-5xl font-bold text-teal-500 mt-40 ">Feature Product</h2>
+        <p className="text-center mt-4 text-teal-500 font-semibold ">The best products stand out with unrivaled quality, reliability, and user satisfaction, setting the benchmark for excellence</p>
         <FeatureProduct></FeatureProduct>
       </div>
 
       <div className="max-w-7xl mx-auto mb-20">
-        <h2 className="dark:text-white text-center text-5xl font-bold text-green-800  mt-40">
+        <h2 className=" text-center text-5xl font-bold text-teal-500  mt-40">
           Hot Deals Products
         </h2>
-        <p className="text-center mt-4 mb-10 text-green-800 font-semibold">Product discounts offer cost-saving opportunities, making quality items more affordable for budget-conscious shoppers</p>
+        <p className="text-center mt-4 mb-10 text-teal-500 font-semibold ">Product discounts offer cost-saving opportunities, making quality items more affordable for budget-conscious shoppers</p>
         <HotDeals></HotDeals>
       </div>
     </div>

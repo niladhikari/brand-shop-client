@@ -76,8 +76,8 @@ const Navbar = () => {
             </div>
             <a className="">
               <img
-                className="w-24"
-                src="https://i.ibb.co/BwnyZXr/5203134.jpg"
+                className="w-36"
+                src="https://i.ibb.co/7kptKDY/Logo.jpg"
                 alt=""
               />
             </a>
@@ -117,10 +117,9 @@ const Navbar = () => {
                   </svg>
                 </label>
               </div>
-            </div>
-          </div>
 
-          <div className="navbar-end">
+
+              <div>
             {user?.email ? (
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -159,6 +158,10 @@ const Navbar = () => {
               </Link>
             )}
           </div>
+            </div>
+          </div>
+
+         
         </div>
       </div>
     </div>
