@@ -5,7 +5,7 @@ const DisplayBands = ({ brand }) => {
   return (
     <div>
       <Link to={`/details/${_id}`}>
-        <div className="card  bg-base-100 shadow-xl">
+        <div className="card px-3 md:px-0 bg-base-100 shadow-xl">
           <figure className="">
             <img
               src={photo}

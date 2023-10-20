@@ -7,7 +7,7 @@ const MyCart = () => {
   const [myProduct, setMyProduct] = useState([]);
 
   // const handleDelete = (id) => {
-  //   fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/cards/${id}`, {
+  //   fetch(`https://brand-shop-server-vert.vercel.app/cards/${id}`, {
   //     method: "DELETE",
   //   })
   //     .then((res) => res.json())
@@ -18,7 +18,7 @@ const MyCart = () => {
 
     const handleDelete = (id) => {
     console.log(id);
-    fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/cards/${id}`, {
+    fetch(`https://brand-shop-server-vert.vercel.app/cards/${id}`, {
       method: "DELETE",
     })
       .then((res) => {
@@ -45,7 +45,7 @@ const MyCart = () => {
   };
 
   useEffect(() => {
-    fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/cards/${user?.email}`)
+    fetch(`https://brand-shop-server-vert.vercel.app/cards/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyProduct(data));
   }, [user]);

@@ -3,9 +3,9 @@ const FeatureProduct = () => {
     <div className="max-w-7xl mx-auto">
       <div className="carousel w-full   lg:h-[550px]">
         <div id="slide1" className="carousel-item relative w-full">
-          <div className="flex flex-col lg:flex-row items-center p-5 md:p-24 gap-1">
+          <div className="flex flex-col-reverse lg:flex-row items-center p-5 md:p-24 gap-1">
             <div className="space-y-4 md:space-y-7 md:flex-1 pb-5">
-              <h1 className="text-4xl  font-bold text-[#000]">
+              <h1 className="text-2xl md:text-4xl font-bold text-[#000]">
                 <span className="text-pink-500">iPhone 15 Pro</span>
               </h1>
               <p className=" text-base font-semibold">
@@ -34,9 +34,9 @@ const FeatureProduct = () => {
           </div>
         </div>
         <div id="slide2" className="carousel-item relative w-full">
-          <div className="flex flex-col lg:flex-row items-center p-5 md:p-24 gap-1">
+          <div className="flex flex-col-reverse lg:flex-row items-center p-5 md:p-24 gap-1">
             <div className="space-y-4 md:space-y-7 md:flex-1 pb-5">
-              <h1 className="text-4xl  font-bold text-[#000]">
+              <h1 className="text-2xl md:text-4xl  font-bold text-[#000]">
                 <span className="text-pink-500">Galaxy S23 Ultra</span>
               </h1>
               <p className=" text-base font-semibold">
@@ -63,10 +63,10 @@ const FeatureProduct = () => {
           </div>
         </div>
         <div id="slide3" className="carousel-item relative w-full">
-          <div className="flex flex-col lg:flex-row items-center p-5 md:p-24 gap-1">
+          <div className="flex flex-col-reverse lg:flex-row items-center p-5 md:p-24 gap-1">
             <div className="space-y-4 md:space-y-7 md:flex-1 pb-5">
-            <h1 className="text-4xl  font-bold text-[#000]">
-                <span className="text-pink-500">HUAWEI WATCH GT 2 Pro</span>
+            <h1 className="text-2xl md:text-4xl font-bold text-[#000] ">
+                <span className="text-pink-500 ">HUAWEI WATCH GT 2 Pro</span>
               </h1>
               <p className=" text-base font-semibold">
               Huawei Watch GT 2 Pro is fueled with a 455 mAh battery and supports wireless charging. The dimension of the smartwatch is 46.7 x 46.7 x 11.4 mm and it weighs 52 grams. It comes with sensors such as Accelerometer, gyro, heart rate, barometer, compass, SpO2, and VO2max.

@@ -16,7 +16,7 @@ const SocialLogin = () => {
           navigate("/");
         }, 2000);
         // const user = { email };
-        fetch("https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/user", {
+        fetch("https://brand-shop-server-vert.vercel.app/user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

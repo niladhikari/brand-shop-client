@@ -24,12 +24,12 @@ const router = createBrowserRouter([
       {   
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/brand`)
+          loader: () => fetch(`https://brand-shop-server-vert.vercel.app/brand`)
       },
       {   
           path: '/details/:id',
-          element: <PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>,
-          loader: ({ params }) => fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/brand/${params.id}`)
+          element: <BrandDetails></BrandDetails>,
+          loader: ({ params }) => fetch(`https://brand-shop-server-vert.vercel.app/brand/${params.id}`)
       },
       {   
           path: '/Products',
@@ -53,13 +53,13 @@ const router = createBrowserRouter([
       },
       {   
           path: '/update/:id',
-          element: <UpdateProduct></UpdateProduct>,
-          loader: ({ params }) => fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/product/${params.id}`)
+          element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
+          loader: ({ params }) => fetch(`https://brand-shop-server-vert.vercel.app/product/${params.id}`)
       },
       {   
           path: '/detailsData/:id',
-          element: <ProductDetails></ProductDetails>,
-          loader: ({ params }) => fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/product/${params.id}`)
+          element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
+          loader: ({ params }) => fetch(`https://brand-shop-server-vert.vercel.app/product/${params.id}`)
       },
     ]
   },

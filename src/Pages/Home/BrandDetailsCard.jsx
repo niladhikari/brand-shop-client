@@ -8,7 +8,7 @@ const BrandDetailsCard = ({ product }) => {
     <div>
       <div className=" flex flex-col rounded-md lg:flex-row card-side bg-base-100 shadow-xl">
         <figure>
-          <img src={photo} alt="Product" className="w-72 h-72 m-auto object-cover" />
+          <img src={photo} alt="Product" className=" w-full md:w-72 h-72 m-auto object-cover" />
         </figure>
         <div className="card-body text md:text-left">
           <h2 className="card-title">{brandName}</h2>

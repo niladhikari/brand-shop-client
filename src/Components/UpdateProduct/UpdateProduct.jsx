@@ -37,7 +37,7 @@ const UpdateProduct = () => {
     };
     console.log(myProducts);
 
-    fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/product/${_id}`, {
+    fetch(`https://brand-shop-server-vert.vercel.app/product/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

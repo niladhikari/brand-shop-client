@@ -19,12 +19,13 @@ const ProductDetails = () => {
   const handleAddProduct = () => {
     console.log(productInfo);
 
-    fetch("https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/cards", {
+    fetch("https://brand-shop-server-vert.vercel.app/cards", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(productInfo),
+      body: JSON.stringify(productInfo)
+      ,
     })
       .then((res) => res.json())
       .then((data) => {

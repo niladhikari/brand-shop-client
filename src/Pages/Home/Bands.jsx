@@ -12,7 +12,7 @@ const Bands = () => {
     };
     console.log(myData);
 
-    fetch("https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/brand", {
+    fetch("https://brand-shop-server-vert.vercel.app/brand", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
