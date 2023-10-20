@@ -27,7 +27,7 @@ const AddProduct = () => {
     };
     console.log(myProducts);
 
-    fetch("http://localhost:5000/product", {
+    fetch("https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/product", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

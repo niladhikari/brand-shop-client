@@ -19,7 +19,7 @@ const ProductDetails = () => {
   const handleAddProduct = () => {
     console.log(productInfo);
 
-    fetch("http://localhost:5000/cards", {
+    fetch("https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/cards", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

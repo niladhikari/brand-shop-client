@@ -41,7 +41,7 @@ const Register = () => {
           }, 2000);
         });
         const user = { email };
-        fetch("http://localhost:5000/user", {
+        fetch("https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/user", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

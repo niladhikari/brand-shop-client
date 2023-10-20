@@ -7,7 +7,7 @@
 
 //   const handleDelete = (id) => {
 //     console.log(id);
-//     fetch(`http://localhost:5000/cards/${id}`, {
+//     fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/cards/${id}`, {
 //       method: "DELETE",
 //     })
 //       .then((res) => {
@@ -27,7 +27,7 @@
 //   };
 
 //   useEffect(() => {
-//     fetch(`http://localhost:5000/cards/${user?.email}`)
+//     fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/cards/${user?.email}`)
 //       .then((res) => res.json())
 //       .then((data) => setMyProduct(data));
 //   }, [user]);
@@ -84,7 +84,7 @@
 // export default MyCart;
 
 // const handleDelete = (_id) => {
-//     fetch(`http://localhost:5000/cards/${_id}`, {
+//     fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/cards/${_id}`, {
 //       method: "DELETE",
 //     })
 //       .then((res) => res.json())

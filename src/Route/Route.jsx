@@ -24,12 +24,12 @@ const router = createBrowserRouter([
       {   
           path: '/',
           element: <Home></Home>,
-          loader: () => fetch(`http://localhost:5000/brand`)
+          loader: () => fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/brand`)
       },
       {   
           path: '/details/:id',
           element: <PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>,
-          loader: ({ params }) => fetch(`http://localhost:5000/brand/${params.id}`)
+          loader: ({ params }) => fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/brand/${params.id}`)
       },
       {   
           path: '/Products',
@@ -54,12 +54,12 @@ const router = createBrowserRouter([
       {   
           path: '/update/:id',
           element: <UpdateProduct></UpdateProduct>,
-          loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+          loader: ({ params }) => fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/product/${params.id}`)
       },
       {   
           path: '/detailsData/:id',
           element: <ProductDetails></ProductDetails>,
-          loader: ({ params }) => fetch(`http://localhost:5000/product/${params.id}`)
+          loader: ({ params }) => fetch(`https://brand-shop-server-ifjze3vgp-hridoys-projects.vercel.app/product/${params.id}`)
       },
     ]
   },
