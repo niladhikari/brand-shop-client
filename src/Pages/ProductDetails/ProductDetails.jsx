@@ -47,7 +47,7 @@ const ProductDetails = () => {
         <div>
           <img src={photo} alt="" className="w-full md:h-[600px]" />
         </div>
-        <div className="flex items-center justify-around mt-2">
+        <div className=" md:flex items-center justify-around mt-2">
           <h2 className="text-xl font-bold">{name}</h2>
           <p className="font-bold text-red-600 text-xl">{price}</p>
           {user?.email && (
