@@ -5,6 +5,16 @@ const MyCart = () => {
   const { user } = useAuth();
   const [myProduct, setMyProduct] = useState([]);
 
+  const handleDelete = (_id) => {
+    fetch(`http://localhost:5000/cards/${_id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   useEffect(() => {
     fetch(`http://localhost:5000/cards/${user?.email}`)
       .then((res) => res.json())
@@ -45,7 +55,7 @@ const MyCart = () => {
               </p>
 
               <div className="flex justify-center mt-6">
-                <button onClick={'()=> handleDelete(product._id)'}
+                <button onClick={()=> handleDelete(product._id)}
                 className="p-3 bg-red-500 rounded-md font-semibold text-white">
                   Delete
                 </button>

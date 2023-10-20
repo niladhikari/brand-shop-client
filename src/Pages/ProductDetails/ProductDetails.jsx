@@ -8,12 +8,12 @@ const ProductDetails = () => {
   const { _id, name, brandName, details, photo, price } = productDetails;
 
   const productInfo = {
-    _id,
+    id:_id,
     name,
     brandName,
     photo,
     price,
-    email: user.email,
+    email: user?.email,
   };
 
   const handleAddProduct = () => {
@@ -49,7 +49,7 @@ const ProductDetails = () => {
         <div className="flex items-center justify-around mt-2">
           <h2 className="text-xl font-bold">{name}</h2>
           <p className="font-bold text-red-600 text-xl">{price}</p>
-          {user && (
+          {user?.email && (
             <Link>
               <button
                 onClick={handleAddProduct}
