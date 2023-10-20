@@ -1,17 +1,46 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../Hook/useAuth";
+import Swal from "sweetalert2";
 
 const MyCart = () => {
   const { user } = useAuth();
   const [myProduct, setMyProduct] = useState([]);
 
-  const handleDelete = (_id) => {
-    fetch(`http://localhost:5000/cards/${_id}`, {
+  // const handleDelete = (id) => {
+  //   fetch(`http://localhost:5000/cards/${id}`, {
+  //     method: "DELETE",
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //     });
+  // };
+
+    const handleDelete = (id) => {
+    console.log(id);
+    fetch(`http://localhost:5000/cards/${id}`, {
       method: "DELETE",
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
+      .then((res) => {
+        if (res.status === 200) {
+      
+          console.log("Item deleted successfully.");
+        
+          setMyProduct(myProduct.filter((item) => item._id !== id));
+            Swal.fire({
+              title: "Success!",
+              text: "Product Delete Successfully",
+              icon: "success",
+              confirmButtonText: "Cool",
+            });
+
+        } else {
+   
+          console.error("Error deleting item.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error:", error);
       });
   };
 
@@ -20,6 +49,7 @@ const MyCart = () => {
       .then((res) => res.json())
       .then((data) => setMyProduct(data));
   }, [user]);
+ 
 
   if (!myProduct || myProduct.length === 0) {
     return (

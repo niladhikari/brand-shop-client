@@ -11,7 +11,7 @@ const BrandDetails = () => {
     return (
       <div className="max-w-7xl mx-auto">
         <p className="h-[80vh] flex justify-center items-center text-2xl font-semibold">
-          No Data Found
+          There is no Product Available
         </p>
       </div>
     );
