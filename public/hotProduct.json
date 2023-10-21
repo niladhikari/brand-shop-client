@@ -30,5 +30,21 @@
         "price": "$270",
         "price2": "$350",
         "description": "The HUAWEI Band 6 is a fitness tracker with a large AMOLED display and features such as heart rate monitoring, sleep tracking, and multiple workout modes. It provides users with fitness and health-related data."
+    },
+    {
+        "id":5,
+        "productName": "HP Wireless Mouse",
+        "image": "https://i.ibb.co/Pg64V26/c07094085.png",
+        "price": "$270",
+        "price2": "$320",
+        "description": "Experience uninterrupted creativity with a multi-device mouse that is crafted to create with programmable buttons, ergonomic design, and rechargeable battery life that lasts up to 3 months."
+    },
+    {
+        "id":6,
+        "productName": "Sony SRS-XV800",
+        "image": "https://i.ibb.co/vJp9kvz/Primary-image-1200-9.jpg",
+        "price": "$270",
+        "price2": "$312",
+        "description": "Omni-directional Party Sound with X-Balanced Speaker Unit, and five tweeters in front and rear.Handle/wheel for easy portability. TV Sound Booster provides a rich audio-visual experience with deep bass."
     }
 ]
