@@ -1,5 +1,7 @@
 ## Project Name
-# [EcoTech Innovations](https://scintillating-medovik-6d834b.netlify.app/)
+## EcoTech Innovations
+
+# [Live Link](https://scintillating-medovik-6d834b.netlify.app/)
 
 ## Least five  different features in this project is:
  
