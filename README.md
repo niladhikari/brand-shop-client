@@ -12,3 +12,6 @@
 - The fourth feature of our system enhances the user experience by allowing them to add products to their cart. In the "product details" route, a dedicated button enables users to include the chosen product in their cart, and they can repeat this process for multiple products. The "my cart" route is where users can conveniently review the products they've added. If a user wishes to remove an item from their cart, they can easily do so by clicking the delete button. This feature streamlines product selection, cart management, and ensures a user-friendly shopping experience.
 
 - The fifth feature of our system caters to user preferences by offering a dark mode option. Users can activate dark mode by clicking the button adjacent to the login button, which transforms the entire website into a dark theme for improved visibility in low-light conditions. Clicking the button again will return the website to its default, light mode. This feature is integrated into our comprehensive user authentication system, enhancing the overall user experience by allowing customization based on individual preferences.
+
+### Technologies used : 
+- Tailwind CSS, React, MongoDB, Node.js, Express.js, JWT token, Firebase.
